@@ -3,7 +3,7 @@ title = 'Power Engineering'
 type = 'page'
 +++
 
-It can be hard to explain what I do for work without having a basic understanding of a bunch of power engineering concepts. 
+It can be hard to explain what I do for work to family without having a basic understanding of a bunch of power engineering concepts. 
 So this post is an attempt at that. 
 A disclaimer that the below all represents my personal opinions and understandings and does not represent that of my employer or any other organisations.
 
@@ -190,12 +190,14 @@ So if you want more power then this and there is no capacity available, you are 
 
 In the case of solar, when there is no capacity left there might be an option to connect for free but not be allowed to export to the grid. This is so that people without solar aren't forced to pay for the upgrade costs in their bills for those that do, but does still mean they might miss out if they want to add solar later. If for example, there was a 100 kW transformer on a street, and everyone can automatically apply for a 5 kW solar system, the first 20 people on the street to install solar are allowed to export indefinitely, but everyone after that is not allowed to export as there is no spare capacity left without installing a new transformer (which is expensive). 
 
-The problem with a fixed hosting capacity number, is that is needs to be conservative and assume the worst-case conditions into the future. It only really applies on minimum demand days, but the rest of the year it may be possible for the grid to handle way more then that. 
+The main issue with a fixed export hosting capacity number, is that is needs to be conservative and assume the worst-case conditions into the future. It only really applies on minimum demand days, but the rest of the year it may be possible for the grid to handle way more than that. 
 
 ## Dynamic Operating Envelopes
 
-If we dynamically calculate the hosting capacity every 5 minutes instead of using a single worst-case figure for the entire year, we unlock heaps of extra capacity for free for ~95% of the time. In theory, calculating this dynamic hosting capacity is relatively easy, it's the real-time rating (factoring in weather conditions) minus the real-time power usage (what power are people using right now). In practice, it's usually not that easy - there isn't real time data for weather and power usage at every point in the network so a bunch of complex calculations and assumptions need to be made to try and work it out. 
+If we dynamically calculate the hosting capacity every 5 minutes instead of using a single worst-case figure for the entire year, we unlock heaps of extra capacity for free for ~95% of the time. In theory, calculating this dynamic capacity is relatively easy, it's the real-time rating (factoring in weather conditions) minus the real-time power usage (what power are people using right now). In practice, it's usually not that easy - there isn't real time data for weather and power usage at every point in the network so a bunch of complex calculations and assumptions need to be made to try and estimate it. 
 
 Sending the grid limits is a big improvement over direct control over appliances as a customer. Instead of turning of having the network turn off a specific device - a Home Energy Management System (or HEMS) can make these decisions for you. On min demand days, if the grid wants you to stop exporting solar instead of it turning off and wasting generation, you could instead charge your EV or run the air con to pre-cool your house. On max demand days, if the grid wants you to stop importing energy you could power your air con from your battery instead. Or if you do need to turn something off you can make the choice about whether your air con or EV charging is more important at that moment. 
 
-Dynamic Operating Envelopes (DOE) over the internet is one solution to this. Basically the HEMS receives an Import and Export Limit (in kW) every 5 minutes for that site. It works a little bit like a variable speed limit sign on the motorway that might say it's 100 km/h normally but will drop down to 60 km/h if there has been an accident or congestion. 
+Dynamic Operating Envelopes (DOE) over the internet is one solution to this. Basically the HEMS receives an Import and Export Limit (in kW) every 5 minutes for that site. It works a little bit like a [variable speed limit sign][vsls] on the motorway that might say it's 100 km/h normally but will drop down to 60 km/h if there has been an accident or congestion. 
+
+[vsls]: https://www.tmr.qld.gov.au/travel-and-transport/road-and-traffic-info/smart-motorways/smart-motorways-technologies#Variable-Speed-Limit-Signs
