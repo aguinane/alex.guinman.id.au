@@ -87,7 +87,7 @@ But adding up how much some (not even all) of the appliances in our house can us
 | Chest Freezer                  | 1       | 0.2        |
 | *Total*                        | *111*   | *25.6*     |
 
-This possible because of something called diversity - where hopefully you are not running every single load in your house at the exact same time.
+This is possible because of something called diversity - where hopefully you are not running every single load in your house at the exact same time.
 
 In a [another post](https://alex.guinman.id.au/posts/2023/energy-usage/), I did some analysis of our home energy usage. If you look at my usage over the course of a year, you can see that for most of the year we use barely any power (<1 kW). In daytime we are mostly exporting power to the grid up to the 5 kW size of our rooftop solar. For a very small percentage of the year we are using 4-8 kW if the air conditioning is particularly working hard. 
 
@@ -105,15 +105,16 @@ Or, if we had an electric car and wanted to charge it after our trip (another 3 
 
 ![](peak-day.png)
 
-Luckily, it's rare that everything wwould run at the same time like this though. 
+Luckily, it's rare that everything would run at the same time like this though. 
 Even on hot days when you might run the air-con all day, in reality it's turning on and off throughout the day. 
 Air-con has a thermostat and so will only turn on when the room temperature is above whatever it is set to.
 The rest of the time the air-con is turned off. 
 It is the same for fridges, hot water etc they just turn on and off throughout the day as needed to get the temperature right. 
-The expected After-Diversity Maximum Demand (ADMD) for Queensland households is 5 kVA [^eadmd] - which means whilst people might use more then that for very short periods, on average the most houses use at any one time (on  average) is 5 kVA even on really hot days. 
+
+According to the [Ergon Energy Developers Handbook][ergonadmd] the expected After-Diversity Maximum Demand (ADMD) for Queensland households is 5 kVA.
+This means that whilst people might use more then that for very short periods, on average the most houses use at any one time is 5 kVA even on really hot days. 
 Unfortunately, there is no such diversity for solar because generally if the sun is shining for you (or cloudy), it is for all your neighbours as well and always at the same time of the day. 
 
-[^eadmd]: According to the [Ergon Energy Developers Handbook][ergonadmd]
 [ergonadmd]: https://www.ergon.com.au/__data/assets/pdf_file/0016/1020490/Developers-Handbook-Developers-Design-and-Construct-Work-14340283.pdf
 
 Looking at 10 peaky days for our house, you can see the time of the load peaks varies pretty wildly (but not so much for solar generation).
