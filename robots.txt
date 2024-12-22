@@ -1,0 +1,3 @@
+User-agent: *
+
+Sitemap: https://alex.guinman.id.au/sitemap.xml
