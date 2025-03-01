@@ -1,12 +1,11 @@
 {% extends "index.html" %}
 
 {% block content %}
-<ul>
+<section>
     {%- for page in term.pages -%}
-    <li>
+    <aside>
         {{ macros::post_summary_image(page=page) }}
-    </li>
-    </li>
+    </aside>
     {%- endfor -%}
-</ul>
+</section>
 {% endblock content %}

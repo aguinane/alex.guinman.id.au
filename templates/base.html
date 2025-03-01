@@ -1,7 +1,7 @@
 {% import 'macros.html' as macros %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html color-mode="user" lang="en">
 
 <head>
   <meta charset="utf-8">
@@ -13,7 +13,18 @@
     {% endblock title %}
   </title>
 
-  <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+  <!-- <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">-->
+  <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+
+  <style>
+    img {
+      max-width: 800px;
+      height: auto;
+      max-height: 600px;
+    }
+  </style>
+
+
 
   {% block head %} {% endblock %}
 </head>
@@ -24,7 +35,7 @@
 
   {% include 'header.html' %}
 
-  <main class="container">
+  <main class="container" style="padding-top: 0; padding-bottom: 0;">
     {% block content %} {% endblock %}
   </main>
 

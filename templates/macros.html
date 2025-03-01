@@ -4,14 +4,15 @@
     {{tag}}
 </a>
 {% endfor %}
-
 {% endmacro %}
 
 
 {% macro render_series(series) %}
 <p class="notice">
-    This post is part of the series
-    {% for s in series %}<a href="{{ get_taxonomy_url(kind='series', name=s) }}">{{s}}</a>{% endfor %}.
+    <em>
+        This post is part of the series
+        {% for s in series %}<a href="{{ get_taxonomy_url(kind='series', name=s) }}">{{s}}</a>{% endfor %}.
+    </em>
 </p>
 {% endmacro %}
 
@@ -35,18 +36,20 @@
 {% endmacro %}
 
 {% macro post_summary_image(page) %}
+{% if page.extra.image is defined %}
+<img src="/{{ page.extra.image }}" style="max-height: 300px; width: auto;">
+{% endif %}
+<h3><a href="{{ page.permalink }}">{{ page.title }}</a></h3>
 {% if page.date is defined %}
-<span>
+<p>
     <i>
         <time datetime="{{ page.date | date(format='%+') }}" pubdate>
             {{ page.date | date(format=config.extra.date_format) }}
         </time>
 
     </i>
-</span>
+</p>
 {% endif %}
-<a href="{{ page.permalink }}">{{ page.title }}</a>
-{% if page.extra.image is defined %}
-<br><img src="/{{ page.extra.image }}" style="max-height: 300px; width: auto;">
-{% endif %}
+
+
 {% endmacro %}
