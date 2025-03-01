@@ -9,7 +9,10 @@
 <h1 class="title">
   {{ page.title }}
 </h1>
-<p class="subtitle"><strong>{{ page.date | date(format=config.extra.date_format) }}</strong></p>
+<p class="subtitle">
+  <strong>{{ page.date | date(format=config.extra.date_format) }}</strong>
+  {% if page.updated %}<em>(updated {{ page.updated | date(format=config.extra.date_format) }})</em>{% endif %}
+</p>
 
 {% if page.taxonomies.series %}
 {{ macros::render_series(series=page.taxonomies.series) }}

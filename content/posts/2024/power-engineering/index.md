@@ -1,6 +1,15 @@
 +++
-title = 'Power Engineering'
-type = 'page'
+title = 'Dynamic Operating Envelopes'
+date = "2024-12-22"
+updated = "2025-02-24"
+slug = "power-engineering"
+type = "post"
+
+[taxonomies]
+categories = [ "Engineering",]
+
+[extra]
+image = "posts/2024/power-engineering/peak-day.png"
 +++
 
 It can be hard to explain what I do for work to family without having a basic understanding of a bunch of power engineering concepts. 

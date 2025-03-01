@@ -6,7 +6,7 @@ images = [ "posts/2019/energy-data/old_meter.jpg",]
 type = "post"
 
 [taxonomies]
-categories = [ "Misc",]
+categories = [ "Engineering",]
 
 [extra]
 image = "posts/2019/energy-data/old_meter.jpg"

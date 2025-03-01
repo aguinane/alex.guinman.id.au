@@ -5,7 +5,7 @@ slug = "energy-usage"
 type = "post"
 
 [taxonomies]
-categories = [ "Misc",]
+categories = [ "Engineering",]
 
 [extra]
 image = "posts/2023/energy-usage/heatmap.png"

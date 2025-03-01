@@ -5,7 +5,7 @@ slug = "air-con-automation"
 type = "post"
 
 [taxonomies]
-categories = [ "Misc",]
+categories = [ "Engineering",]
 
 [extra]
 image = "posts/2020/air-con-automation/aircon.jpg"
