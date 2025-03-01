@@ -13,12 +13,9 @@
     <strong>{{ page.date | date(format=config.extra.date_format) }}</strong>
     {% if page.updated %}<em>(updated {{ page.updated | date(format=config.extra.date_format) }})</em>{% endif %}
 
-
     {% if page.taxonomies.tags %}
     &nbsp;{{ macros::render_tags(tags=page.taxonomies.tags) }}
     {% endif %}
-
-
   </p>
 
   {% if page.taxonomies.series %}
