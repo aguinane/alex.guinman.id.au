@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html color-mode="user" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+    
+Alex Guinman | Security Cameras
+
+  </title>
+
+  <!-- <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">-->
+  <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+
+  <style>
+    img {
+      max-width: 800px;
+      height: auto;
+      max-height: 600px;
+    }
+  </style>
+
+
+
+   
+</head>
+
+<body>
+
+
+
+  <header style="padding: 0">
+    <h1>Alex Guinman</h1>
+    <nav style="margin-bottom: 0rem">
+        <ul>
+            <li><a aria-current="page" href="/categories/travel/">Travel</a></li>
+            <li><a aria-current="page" href="/categories/engineering/">Engineering</a></li>
+            <li><a aria-current="page" href="/categories/misc/">Misc</a></li>
+            <li><a aria-current="page" href="/pages/about">About</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+  <main class="container" style="padding-top: 0; padding-bottom: 0;">
+    
+<section>
+  <h1 class="title">
+    Security Cameras
+  </h1>
+  <p class="subtitle">
+    <strong>2019-07-11</strong>
+    
+
+    
+  </p>
+
+  
+
+
+  <p><strong>Uptype: post
+date:</strong>  Ubiquiti have discontinued UniFi Video. The cameras <a href="https://store.reolink.com/au/poe-ip-cameras/">from reolink</a> seem to be basically the same, but cheaper. I'd probably get them instead. Very annoyed that they made it end-of-life just after I bought the NVR.</p>
+<p>Recently I ended up installing some IP security cameras at our place, and since a few people have asked about them I thought I'd do a quick summary on here.</p>
+<p>It's something we talked about for a while, since we had an incident one holidays. Dad and I were doing work under the house, we all went to lunch and then when we came back we found a credit card under the house that wasn't there before. We took it to the police station and it turns out there had been someone running from the police that was hiding under our house while they were looking for him - and he must have dropped his credit card.</p>
+<p>We also know of a few people that have been broken into recently, so thought it would be a good investment. QPS actually have a pretty cool <a href="https://www.police.qld.gov.au/forms/crimestatsdesktop.asp">interactive crime map</a>.</p>
+<p><img src="https://alex.guinman.id.au/posts/2019/security-cameras/crime-heatmap.jpg" title="Toowoomba%20Crime%20Map" alt="&quot;Crime Map&quot;" loading="lazy" decoding="async" /></p>
+<p>It&#39;s also good to be able to check up on Mia - but Rachael finds it a bit depressing because she generally just waits for us at the back door and sooks until we get home. We did catch her opening a box to get her toys out - pretty clever.</p>
+<p><img src="https://alex.guinman.id.au/posts/2019/security-cameras/mia-box.jpg" title="Mia%20up%20to%20mischief" alt="&quot;Mia up to mischief&quot;" loading="lazy" decoding="async" /></p>
+<p>I ended up doing a bit of research because the requirements I had actually made it pretty hard to find cameras that did everything I wanted.</p>
+<p>The <a href="https://au-en.ring.com/pages/security-cameras">Ring</a> and <a href="https://www.xiaomistore.pk/yi-outdoor-security-camera.html">Xiaomi</a> looked okay - but recordings aren&#39;t stored locally so you need to pay for a cloud subscription to be able to record things. It also means that you use a bunch of data uploading the footage.</p>
+<p>In order to record things locally you need something called Network Video Recorder (NVR) software. I ended up buying Ubiquiti cameras and they have free UniFi Video NVR software, but it only works with their cameras.</p>
+<p>I didn&#39;t want to be locked in to that though - you can also use something like ZoneMinder (free) or Blue Iris (paid) and they appear to support most IP cameras, although I haven&#39;t try either. The unifi cameras support streaming to other software - although you have to use their software first to enable this. Another requirement was that it had to work with Home Assistant, which <a href="https://www.home-assistant.io/components/uvc/">the Unifi cameras do</a>.</p>
+<p>I originally was running the free NVR software on my NAS, but it was a bit underspecced and made the NAS run slow and filled up the HDD. When the power went out the NAS wants you to check the disk before it starts it up again which also helpful for a security camera when you are away. So I ended up buying their <a href="https://www.umart.com.au/Ubiquiti-UniFi-NVR-2TB-Network-Video-Recorder_44608G.html">hardware NVR</a> to use instead.</p>
+<p><strong>Uptype: post
+date:</strong> Annoyingly, they discontinued the NVR and replaced it <a href="https://www.ubnt.com.au/unifi-cloud-key-gen2-plus">with this</a> a few months after I bought it.</p>
+<p>Another requirement was that I preferrably wanted to use Power over Ethernet (PoE) which means you don&#39;t have to have a power point it just has an ethernet cable that powers it and does data transfer. But it meant I had to buy a new <a href="https://www.umart.com.au/Ubiquiti-UniFi-8-Port-60W-with-4-Ports-POE-OEM_39604G.html">network switch that supports PoE</a> as well and they are also expensive. You can just buy a standalone <a href="https://www.umart.com.au/Ubiquiti-POE-Injector--24VDC--12W_38532G.html">PoE injector</a> for each camera ($10 each) but that makes things a bit messy as you would have a bunch of them and need a switch anyway if you don&#39;t have enough ethernet ports.</p>
+<p>If you get the <a href="https://www.umart.com.au/Ubiquiti-UVC-G3-FLEX-UniFi-Video-Camera_44406G.html">Flex model</a> the cameras themselves weren&#39;t that expensive. I did get one of the more expensive models for the backyard beacause of the mounting design, but I don&#39;t think the quality is any better, even the night-time quality seems similar.</p>
+<p>It ended up being a lot more expensive then I would have thought, but pretty happy with the setup overall now that everything is installed.</p>
+
+
+
+</section>
+
+  </main>
+
+  <footer>
+    <hr>
+    <p><small>
+            &copy; Alex Guinman
+            <br>
+            Any views or opinions on this blog are my own and do not express the views of anyone
+            else who is not me*, nor any employer.
+            <br>*And maybe not even mine anymore, depending on how old the post is.
+        </small></p>
+</footer>
+
+</body>
+
+</html>
