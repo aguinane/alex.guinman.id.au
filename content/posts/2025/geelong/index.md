@@ -1,17 +1,16 @@
 +++
 title = "Geelong"
 date = "2025-01-17"
-updated = "2025-03-01"
+#updated = "2025-03-01"
 slug = "geelong"
 type = "post"
 
 [taxonomies]
 categories = [ "Travel",]
-tags = [ "victoria",]
+tags = ["Victoria"]
 
 [extra]
 image = "posts/2025/geelong/20250114_172227.jpg"
-
 +++
 
 We booked out first flight with the kids to Melbourne to visit Lauren. 
