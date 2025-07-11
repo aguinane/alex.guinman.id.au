@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html color-mode="user" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+    
+Alex Guinman | Dynamic Operating Envelopes
+
+  </title>
+
+  <!-- <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">-->
+  <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+
+  <style>
+    img {
+      max-width: 800px;
+      height: auto;
+      max-height: 600px;
+    }
+  </style>
+
+
+
+   
+</head>
+
+<body>
+
+
+
+  <header style="padding: 0">
+    <h1>Alex Guinman</h1>
+    <nav style="margin-bottom: 0rem">
+        <ul>
+            <li><a aria-current="page" href="/categories/travel/">Travel</a></li>
+            <li><a aria-current="page" href="/categories/engineering/">Engineering</a></li>
+            <li><a aria-current="page" href="/categories/misc/">Misc</a></li>
+            <li><a aria-current="page" href="/pages/about">About</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+  <main class="container" style="padding-top: 0; padding-bottom: 0;">
+    
+<section>
+  <h1 class="title">
+    Dynamic Operating Envelopes
+  </h1>
+  <p class="subtitle">
+    <strong>2024-12-22</strong>
+    <em>(updated 2025-02-24)</em>
+
+    
+  </p>
+
+  
+
+
+  <p>It can be hard to explain what I do for work to family without having a basic understanding of a bunch of power engineering concepts.
+So this post is an attempt at that.
+A disclaimer that the below all represents my personal opinions and understandings and does not represent that of my employer or any other organisations.</p>
+<h2 id="ratings">Ratings</h2>
+<p>When you run electricity through things they get hotter - the more energy the hotter it can get.
+Power lines are essentially a bit of a wire strung between two poles.
+Just like any metal, when it gets hot it expands and cause the wire to get longer and 'sag'.
+There are rules about how low they can get by sagging before they are a safety issue.
+This is to prevent things like trucks or cars hitting them, or someone being able to come into contact with it some other way if it's not near a road.</p>
+<p><img src="https://alex.guinman.id.au/posts/2024/power-engineering/lines.jpg" alt="Power lines" loading="lazy" decoding="async" /></p>
+<p>Eventually, if you went way above the rating the wires would melt and fall to the ground.
+So there is a maximum amount of power that can safely flow through the lines before they have a safety issue, which is called the rating.
+As ratings are due to the wire heating up, they can change throughout the year based on weather conditions (it&#39;s colder on a winter night, then a summer evening and so they can handle more energy).</p>
+<p>Transformers and other electrical equipment are often full of oil and if the oil gets too hot it can catch fire or arc, and so transformers also have a maximum amount of power they can handle.
+One good thing about thermal ratings is that generally things can take a while to heat up (maybe a few hours) so very short periods going slightly above the maximum value can be okay.</p>
+<p>If the power being used is getting close to the rating, you either need to reduce the power being used or put in bigger wires or transformers that can handle more heat.</p>
+<h2 id="">Protection</h2>
+<p>To prevent wires falling to the ground, or transformers catching fire, there are things called protection devices that will turn the power off before this happens.
+Other safety issues, like a power line falling to the ground or a lightning strike, will generally produce a fault current that is much higher then the rating and will cause the protection to trip the power off.
+Generally the protection thresholds are set slightly lower then the rating, so that power will trip off before things get damaged or there are safety concerns.</p>
+<p>Things that aren&#39;t faults can cause large spikes in power though, (<a href="https://www.reuters.com/article/world/us/england-brews-up-sufficient-power-for-world-cup-tea-time-surge-idUSKBN0E92G1/">like in the UK where everyone turns their kettle on at half time of a football match</a>).
+So the protection limit needs to be set such that it does not turn off the power for actual loads, but does for any faults.</p>
+<p>The circuit breakers in your house switchboard does the same thing, which is why sometimes the safety switch will trip when using an dodgy iron.
+Or if you have two many appliances running on a circuit at the same time it will exceed the breaker&#39;s rating and trip.</p>
+<p><img src="https://alex.guinman.id.au/posts/2024/power-engineering/breakers.jpg" alt="Circuit breakers" loading="lazy" decoding="async" /></p>
+<p>Another way to avoid turning off the power unnecessarily is something called an &#39;auto-reclose&#39;.
+This is when a fault is detected and the protection device gives it a few seconds to try and go away by itself.
+An example would be a lightning strike or tree branch falling on a line.
+The hope is that if you wait a few seconds and try to turn the power back on everything might have fixed itself.
+Lightning only lasts a split-second and in the case of the tree branch it would have caught fire and fallen away.
+That&#39;s why sometimes in storms the lights will flicker off and on a few times, but hopefully the power stays on.
+If the fault is still detected after a few reclose attempts, it is probably something more serious (like a fallen line) and so it needs to be turned off permanently until someone can physically make the area safe and fix the problem.</p>
+<h2 id="-1">Power Quality</h2>
+<p>Another thing that can limit how much power can flow through the grid is power quality.</p>
+<p>To explain electricity, water pipes are often used as an analogy.
+For voltage, this is analogous to the water pressure.  Similar to how you do not want water pressure to be too strong or weak when having a shower, there is a sweet spot. In order to prevent damage to equipment it needs to be kept in a certain range - if the voltage gets too high or low it can <a href="https://ro.uow.edu.au/test2021/4993/">cause damage to appliances</a>. In particular, high volts will make things run slightly hotter and therefore not last as long. If you look at the label on a phone charger for example, it will say what voltage range it can work with (probably 100-240 V). In Australia, the preferred voltage range that power should be supplied to your house is 225-244 V.</p>
+<p>Below is an example of the voltage at our house throughout the day and how it changes based on how much power we are using at the time.
+It also varies when we aren&#39;t using any power, as your neighbours are all sharing the same network and so they can also impact it.</p>
+<p><img src="https://alex.guinman.id.au/posts/2024/power-engineering/voltage.png" alt="" loading="lazy" decoding="async" /></p>
+<p>Generating power (exporting solar) pushes the voltage up, and consuming power brings the voltage down. Looking at my peak day example above, the voltage started at about 236 V. When the solar came on it pushed the voltage up 4 V to 240 V and then when the air con came on it dropped 8 V to 232 V (and the solar was still helping to push it up). The relationship between power and voltage can depend on where in the network the power is coming from - the transformer is right out the front of my house and the further from the transformer your house is the bigger the impact on the voltage, so it didn&#39;t vary that much. So sometimes the hosting capacity will be limited not by a thermal rating but by the power being so high (or low) that it causes voltages to be outside the preferred range and starting to cause damage to appliances.</p>
+<h2 id="-2">Demand and Diversity</h2>
+<p>In my switchboard, the main safety switch has a rating of 63 A.
+But adding up how much some (not even all) of the appliances in our house can use, gives a total power of 111 A.</p>
+<table><thead><tr><th>Appliance</th><th>Amperes</th><th>kilo Watts</th></tr></thead><tbody>
+<tr><td>Air Con</td><td>25</td><td>5.8</td></tr>
+<tr><td>Oven</td><td>22</td><td>5.1</td></tr>
+<tr><td>Hot Water System</td><td>15</td><td>3.5</td></tr>
+<tr><td>Induction Cooktop (Main Plate)</td><td>15</td><td>3.5</td></tr>
+<tr><td>Induction Cooktop (2nd plate)</td><td>8</td><td>1.8</td></tr>
+<tr><td>Clothes Dryer</td><td>10</td><td>2.3</td></tr>
+<tr><td>Kettle</td><td>9</td><td>2.1</td></tr>
+<tr><td>Toaster</td><td>4</td><td>0.9</td></tr>
+<tr><td>TV</td><td>1</td><td>0.2</td></tr>
+<tr><td>Computer</td><td>1</td><td>0.2</td></tr>
+<tr><td>Chest Freezer</td><td>1</td><td>0.2</td></tr>
+<tr><td><em>Total</em></td><td><em>111</em></td><td><em>25.6</em></td></tr>
+</tbody></table>
+<p>This is possible because of something called diversity - where hopefully you are not running every single load in your house at the exact same time.</p>
+<p>In a <a href="https://alex.guinman.id.au/posts/2023/energy-usage/">another post</a>, I did some analysis of our home energy usage. If you look at my usage over the course of a year, you can see that for most of the year we use barely any power (&lt;1 kW). In daytime we are mostly exporting power to the grid up to the 5 kW size of our rooftop solar. For a very small percentage of the year we are using 4-8 kW if the air conditioning is particularly working hard.</p>
+<p>The below chart is called a load duration curve and shows what percentage of the year was at a given power flow.
+The highest part of the curve is called the maximum demand.
+The lowest part of the curve is called is called the minimum demand (in my case it is negative since we are exporting solar).</p>
+<p><img src="https://alex.guinman.id.au/posts/2024/power-engineering/my_ldc.png" alt="" loading="lazy" decoding="async" /></p>
+<p>A good example of these rare extremes was when we came home from holidays on a cold winter day at about lunch time.
+The hot water had been turned off while we were away and pretty much the only power being used was the fridge and chest freezer.
+We went from a power flow of -5 kW exporting from the solar to importing 8 kW from the grid when I turned on the hot water and started blasting the air conditioning to warm up the house (which means we were actually using about 13 kW as some was fed by the solar).
+If we had needed to cook some lunch on the induction cook top and oven at the same time (which is up to 8 kW in short bursts) we would probably have tripped off the power to the house.
+Or, if we had an electric car and wanted to charge it after our trip (another 3 - 8 kW depending on charging speed) that would have put it over the limit also.</p>
+<p><img src="https://alex.guinman.id.au/posts/2024/power-engineering/peak-day.png" alt="" loading="lazy" decoding="async" /></p>
+<p>Luckily, it&#39;s rare that everything would run at the same time like this though.
+Even on hot days when you might run the air-con all day, in reality it&#39;s turning on and off throughout the day.
+Air-con has a thermostat and so will only turn on when the room temperature is above whatever it is set to.
+The rest of the time the air-con is turned off.
+It is the same for fridges, hot water etc they just turn on and off throughout the day as needed to get the temperature right.</p>
+<p>According to the <a href="https://www.ergon.com.au/__data/assets/pdf_file/0016/1020490/Developers-Handbook-Developers-Design-and-Construct-Work-14340283.pdf">Ergon Energy Developers Handbook</a> the expected After-Diversity Maximum Demand (ADMD) for Queensland households is 5 kVA.
+This means that whilst people might use more then that for very short periods, on average the most houses use at any one time is 5 kVA even on really hot days.
+Unfortunately, there is no such diversity for solar because generally if the sun is shining for you (or cloudy), it is for all your neighbours as well and always at the same time of the day.</p>
+<p>Looking at 10 peaky days for our house, you can see the time of the load peaks varies pretty wildly (but not so much for solar generation).
+<img src="https://alex.guinman.id.au/posts/2024/power-engineering/10days.png" alt="" loading="lazy" decoding="async" /></p>
+<p>For all of Queensland, the maximum demand usually occurs on really hot summer days when everyone is using their air conditioning at the same time.
+In colder places like Toowoomba it might be a winter morning peak with everyone running heating.
+The minimum demand is usually when all the rooftop solar is generating (no clouds) but nobody is using any power - generally Spring and Autumn long weekends (nobody is at work), when temperatures are pleasant (so no air con), but there is plenty of sun.</p>
+<p>Diversity means that you don&#39;t see sudden spikes like you would for a single house as you get higher up in the grid.
+Looking at the state wide load duration curve for Queensland in the <a href="https://www.powerlink.com.au/sites/default/files/2023-10/TAPR%202023%20Chapter%203.pdf">Powerlink TAPR</a>, the peaks are only for a small amount of the year.
+The minimum demand occurs much more often then maximum demand, since solar is less diverse, and is getting lower (and for longer) each year as more people install solar.</p>
+<h2 id="-3">Energy Transition</h2>
+<p>The Australian Energy Market Operator (AEMO) forecasts in their <a href="https://aemo.com.au/-/media/files/major-publications/isp/2024/2024-integrated-system-plan-isp.pdf?la=en">Integrated System Plan</a> a large increase in rooftop solar, batteries and EV charging in the next few decades. The amount of solar has been <a href="https://www.abc.net.au/news/2024-12-18/survey-of-the-worlds-solar-shows-global-boom/104006096">doubling every 3 years</a>.
+<a href="https://electricvehiclecouncil.com.au/wp-content/uploads/2024/03/EVC-Australian-EV-Industry-Recap-2023.pdf">Electic Vechile (EV) sales</a> are increasing at a similar rate, and an EV fast charger basically doubles the capacity a normal house uses (32 A or 7.3 kW), so is pretty significant.</p>
+<p>One solution to support this would be to upgrade the ratings of the grid to support this by doubling the amount of transformers and substations - but this would cost billions of dollars. A significantly cheaper option is to instead just make sure that car charging soaks up all the solar power, and does not happen at the same time as air conditioning. Like with the pandemic, we want to &#39;flatten the curve&#39;.</p>
+<h2 id="-4">Device Control</h2>
+<p>Occasionally, power need to be switched off because there is not enough generation, like when <a href="https://www.abc.net.au/news/2021-06-02/qld-cs-energy-releases-photo-of-damaged-callide-power-station/100186330">a power station suddenly goes offline</a>. On the flip side, generation might need to be turned off if nobody is using any load to make use of it - <a href="https://www.youtube.com/watch?v=8UmsfXWzvEA">this video gives a good example</a>. In Australia, this is done by AEMO issuing something called a <a href="https://aemo.com.au/-/media/files/learn/fact-sheets/lor-fact-sheet.pdf?la=en">Lack of Reserve Notice (LOR)</a> or <a href="https://aemo.com.au/-/media/files/learn/fact-sheets/2024/fact-sheetminimum-system-load.pdf?la=en">Minimum System Load (MSL)</a> Notice.</p>
+<p>The ability to switch circuits on and off on a schedule has been a think since the 50s using something called ripple control.
+If you put certain devices (like hot water or pool pumps) on an economy tariff, you get cheaper electricity rates in return for the network operator being able to turn them off for a few hours on days of peak usage.</p>
+<p>For hot water systems, nobody really notices if they are turned off for short periods as they are essentially a thermal battery and can store heat.
+In fact, they can be used like a normal battery to soak up solar in the day and then you can use the hot water for showers at night.
+All you really care about is that the water is hot when you want to use it.</p>
+<p>For most other appliances you do care that you can use it when you want to as they don&#39;t act like a battery.
+It doesn&#39;t make sense to put air conditioning on an economy tariff as hot days is exactly when you want to use it.
+There was an improvement to ripple control in 2007 in the form of the AS4755 Demand Response standard.
+It allowed other options other then just turning things off completely.</p>
+<ul>
+<li>DRM0: disconnect</li>
+<li>DRM1: compressor off</li>
+<li>DRM2: capped to operate at 50%</li>
+<li>DRM3: capped to operate at 75%</li>
+</ul>
+<p>But most people <a href="https://www.abc.net.au/news/2024-01-31/energex-ergon-peaksmart-air-con-cuts-during-hot-weather/103385474">don&#39;t really like someone having control</a> even though it&#39;s better for everyone&#39;s air con to go to 50% then the power to the street to trip off completely at times of maximum demand.
+A similar problem with solar occurs at times of minimum demand, which is referred to as <a href="https://www.abc.net.au/news/2024-12-02/aemo-demands-emergency-backstop-to-switch-off-solar/104670332">emergency backstop</a> and also not a very popular idea desite being needed to as an emergency mechanism to a system blackout.</p>
+<h2 id="-5">Dynamic Pricing</h2>
+<p>Why can&#39;t this all be solved by or time-of-use tariffs or dynamic prices instead? These definitely can help with the problem but fall short of solving it completely for a couple of reasons.</p>
+<p>We are on a time-of-use tariff, and try to do things like pre-cooling the house to avoid needing to run the air-con during the peak period. But if the temperature gets hot enough - we will run the air-con no matter what the price is.
+Another way that pricing falls short is that it&#39;s generally set a statewide level. There may be little pockets around the state that have a constraint and have an opposing requirement to the statewide one. An example might be that some sort of event is happening that results in a large amount of people visiting a small town (like Roma or Birdsville Races) and despite being a nice sunny day with cheap prices due to lots of solar, the local part of the grid does not have a capacity for everyone to fast charge their EVs simultaneously.</p>
+<h2 id="-6">Hosting Capacity</h2>
+<p>The distribution grid hosting capacity is defined as the amount of new generation or consumption that can be accommodated by the grid without adversely impacting the reliability or power quality for other customers or requiring grid upgrades or modifications.</p>
+<p>Anyone who connects to the electricity grid and receives a fixed connection is guaranteed their part of this available capacity forever in a first come, first served (whoever first calls dibs) system. Generally there is a basic connection offer that anyone can apply for that is free upfront (money comes out of power bills later) even if the network requires upgrades to support it. There is also a negotiated process for larger customers who want more then the basic offering where they might need to pay some of the upgrade cost upfront if upgrades are required to unlock more capacity.</p>
+<p>According to the <a href="https://www.ergon.com.au/__data/assets/pdf_file/0018/1009053/Connection-Policy-2020-2025.pdf">Ergon Connection Policy</a> the basic fixed offering in urban Queensland is currently 100 A (23 kVA) per phase for loads, and 22 A (5 kVA) per phase for generation (solar).
+So if you want more power then this and there is no capacity available, you are required to pay for some of the upgrade costs (which could be very expensive). The reason why the value for loads is higher then generation is due to loads being more diverse then solar as discussed earlier. There is an assumption that not everyone will use all their appliances at the same time, but they will all generate solar at the same time.</p>
+<p>In the case of solar, when there is no capacity left there might be an option to connect for free but not be allowed to export to the grid. This is so that people without solar aren&#39;t forced to pay for the upgrade costs in their bills for those that do, but does still mean they might miss out if they want to add solar later. If for example, there was a 100 kW transformer on a street, and everyone can automatically apply for a 5 kW solar system, the first 20 people on the street to install solar are allowed to export indefinitely, but everyone after that is not allowed to export as there is no spare capacity left without installing a new transformer (which is expensive).</p>
+<p>The main issue with a fixed export hosting capacity number, is that is needs to be conservative and assume the worst-case conditions into the future. It only really applies on minimum demand days, but the rest of the year it may be possible for the grid to handle way more than that.</p>
+<h2 id="-7">Dynamic Operating Envelopes</h2>
+<p>If we dynamically calculate the hosting capacity every 5 minutes instead of using a single worst-case figure for the entire year, we unlock heaps of extra capacity for free for ~95% of the time. In theory, calculating this dynamic capacity is relatively easy, it&#39;s the real-time rating (factoring in weather conditions) minus the real-time power usage (what power are people using right now). In practice, it&#39;s usually not that easy - there isn&#39;t real time data for weather and power usage at every point in the network so a bunch of complex calculations and assumptions need to be made to try and estimate it.</p>
+<p>Sending the grid limits is a big improvement over direct control over appliances as a customer. Instead of turning of having the network turn off a specific device - a Home Energy Management System (or HEMS) can make these decisions for you. On min demand days, if the grid wants you to stop exporting solar instead of it turning off and wasting generation, you could instead charge your EV or run the air con to pre-cool your house. On max demand days, if the grid wants you to stop importing energy you could power your air con from your battery instead. Or if you do need to turn something off you can make the choice about whether your air con or EV charging is more important at that moment.</p>
+<p>Dynamic Operating Envelopes (DOE) over the internet is one solution to this. Basically the HEMS receives an Import and Export Limit (in kW) every 5 minutes for that site. It works a little bit like a <a href="https://www.tmr.qld.gov.au/travel-and-transport/road-and-traffic-info/smart-motorways/smart-motorways-technologies#Variable-Speed-Limit-Signs">variable speed limit sign</a> on the motorway that might say it&#39;s 100 km/h normally but will drop down to 60 km/h if there has been an accident or congestion.</p>
+
+
+
+</section>
+
+  </main>
+
+  <footer>
+    <hr>
+    <p><small>
+            &copy; Alex Guinman
+            <br>
+            Any views or opinions on this blog are my own and do not express the views of anyone
+            else who is not me*, nor any employer.
+            <br>*And maybe not even mine anymore, depending on how old the post is.
+        </small></p>
+</footer>
+
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html color-mode="user" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+    
+Alex Guinman | Air Con Automation
+
+  </title>
+
+  <!-- <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">-->
+  <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+
+  <style>
+    img {
+      max-width: 800px;
+      height: auto;
+      max-height: 600px;
+    }
+  </style>
+
+
+
+   
+</head>
+
+<body>
+
+
+
+  <header style="padding: 0">
+    <h1>Alex Guinman</h1>
+    <nav style="margin-bottom: 0rem">
+        <ul>
+            <li><a aria-current="page" href="/categories/travel/">Travel</a></li>
+            <li><a aria-current="page" href="/categories/engineering/">Engineering</a></li>
+            <li><a aria-current="page" href="/categories/misc/">Misc</a></li>
+            <li><a aria-current="page" href="/pages/about">About</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+  <main class="container" style="padding-top: 0; padding-bottom: 0;">
+    
+<section>
+  <h1 class="title">
+    Air Con Automation
+  </h1>
+  <p class="subtitle">
+    <strong>2020-05-02</strong>
+    
+
+    
+  </p>
+
+  
+
+
+  <p>When I first started playing with <a href="https://www.home-assistant.io">Home Assistant</a> the first thing I thought to automate was our air-conditioner. When we bought the air con for our living room it cost way more for the "smart" ones that you could control with your phone and we didn't think we would use it anyway, so we just got a <a href="https://www.kelvinator.com.au/air-conditioning/split-system/ksv70hrd">dumb one</a>. But since it can take up to five minutes or so before the heater works, it's definitely good to have it automatically turn on on cold mornings, or turn it on from your phone in bed.</p>
+<p>Luckily, since you turn it on with a remote, all you have to do is buy a universal remote with WiFi. I got the Broadlink RM2 Pro from eBay for about $40. The <a href="https://secure.logitech.com/en-au/product/harmony-hub">Logitech</a> ones are probably much better, but cost way more.
+There are also products like <a href="https://sensibo.com">Sensibo</a> that are designed just for air cons but are also way more expensive.</p>
+<p><img src="https://alex.guinman.id.au/posts/2020/air-con-automation/aircon.jpg" title="Wifi%20Remote%20on%20bookshelf" alt="&quot;Air Con&quot;" loading="lazy" decoding="async" /></p>
+<p>The app isn&#39;t very good and setting it up with home assistant is a little bit painful. You have to work out the code the remote sends to turn it on, which for our air con was:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>JgAkAQABJ5MWEhUTFBMVNxQUFBMVExUSFDgUFBMUFDgUExUTFRIVExQTFRMVExQTFBQUNxUTFBQTFBUTFBMVExU2FRMUOBQTFBQUNxQUFQACkBQTFBQUExQUFBQTFBQUFBMVExUSFRMVEhUTFRMUExQUFBMVExUSFRMVEhUTFRMUExQUFBMVExQTFDgVNxQTFDgUAAUhAAEmlBQTFBQUExU3FRIVExUTFBMUOBQTFRMVNxQTFBQUExUTFRIUFBQTFRMUFBQ3FRMUExUTFBMUFBQUFDcVNxQ4FBMVExQ3FBQUAAKRFBMVExQTFRMVEhQUFBQUExQUFBMVExQTFBQUExUTFRMUExQUFBMUFBUSFRMVEhUTFRMUExQUFBMUOBQ4FBMVNxUADQUAAAAA
+</span></code></pre>
+<p>The Broadlink Remote actually has a temperature sensor in it as well. So I set up an automation so that it will automatically turn on the air-con in the morning if the temperature is below 10°C.</p>
+<p><img src="https://alex.guinman.id.au/posts/2020/air-con-automation/hass-aircon.png" title="Home%20Assistant%20Screenshot" alt="" loading="lazy" decoding="async" /></p>
+<p>It&#39;s been running nicely for a couple of years, but broke when I changed the WiFi a few months ago. It&#39;s been pretty cold the last 2 days so went through the painful process of re-pairing to the WiFi and it&#39;s all happy and working again now. Next job will be automatically heating Lyra&#39;s room.</p>
+
+
+
+</section>
+
+  </main>
+
+  <footer>
+    <hr>
+    <p><small>
+            &copy; Alex Guinman
+            <br>
+            Any views or opinions on this blog are my own and do not express the views of anyone
+            else who is not me*, nor any employer.
+            <br>*And maybe not even mine anymore, depending on how old the post is.
+        </small></p>
+</footer>
+
+</body>
+
+</html>

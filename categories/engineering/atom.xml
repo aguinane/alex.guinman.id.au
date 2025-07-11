@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Alex Guinman - Engineering</title>
+    <subtitle>Personal blog</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://alex.guinman.id.au/categories/engineering/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://alex.guinman.id.au"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2025-02-24T00:00:00+00:00</updated>
+    <id>https://alex.guinman.id.au/categories/engineering/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Dynamic Operating Envelopes</title>
+        <published>2024-12-22T00:00:00+00:00</published>
+        <updated>2025-02-24T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Alex Guinman
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://alex.guinman.id.au/posts/2024/power-engineering/"/>
+        <id>https://alex.guinman.id.au/posts/2024/power-engineering/</id>
+        
+        <content type="html" xml:base="https://alex.guinman.id.au/posts/2024/power-engineering/">&lt;p&gt;It can be hard to explain what I do for work to family without having a basic understanding of a bunch of power engineering concepts.
+So this post is an attempt at that.
+A disclaimer that the below all represents my personal opinions and understandings and does not represent that of my employer or any other organisations.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;ratings&quot;&gt;Ratings&lt;&#x2F;h2&gt;
+&lt;p&gt;When you run electricity through things they get hotter - the more energy the hotter it can get.
+Power lines are essentially a bit of a wire strung between two poles.
+Just like any metal, when it gets hot it expands and cause the wire to get longer and &#x27;sag&#x27;.
+There are rules about how low they can get by sagging before they are a safety issue.
+This is to prevent things like trucks or cars hitting them, or someone being able to come into contact with it some other way if it&#x27;s not near a road.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;alex.guinman.id.au&#x2F;posts&#x2F;2024&#x2F;power-engineering&#x2F;lines.jpg&quot; alt=&quot;Power lines&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Eventually, if you went way above the rating the wires would melt and fall to the ground.
+So there is a maximum amount of power that can safely flow through the lines before they have a safety issue, which is called the rating.
+As ratings are due to the wire heating up, they can change throughout the year based on weather conditions (it&amp;#39;s colder on a winter night, then a summer evening and so they can handle more energy).&lt;&#x2F;p&gt;
+&lt;p&gt;Transformers and other electrical equipment are often full of oil and if the oil gets too hot it can catch fire or arc, and so transformers also have a maximum amount of power they can handle.
+One good thing about thermal ratings is that generally things can take a while to heat up (maybe a few hours) so very short periods going slightly above the maximum value can be okay.&lt;&#x2F;p&gt;
+&lt;p&gt;If the power being used is getting close to the rating, you either need to reduce the power being used or put in bigger wires or transformers that can handle more heat.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;&quot;&gt;Protection&lt;&#x2F;h2&gt;
+&lt;p&gt;To prevent wires falling to the ground, or transformers catching fire, there are things called protection devices that will turn the power off before this happens.
+Other safety issues, like a power line falling to the ground or a lightning strike, will generally produce a fault current that is much higher then the rating and will cause the protection to trip the power off.
+Generally the protection thresholds are set slightly lower then the rating, so that power will trip off before things get damaged or there are safety concerns.&lt;&#x2F;p&gt;
+&lt;p&gt;Things that aren&amp;#39;t faults can cause large spikes in power though, (&lt;a href=&quot;https:&#x2F;&#x2F;www.reuters.com&#x2F;article&#x2F;world&#x2F;us&#x2F;england-brews-up-sufficient-power-for-world-cup-tea-time-surge-idUSKBN0E92G1&#x2F;&quot;&gt;like in the UK where everyone turns their kettle on at half time of a football match&lt;&#x2F;a&gt;).
+So the protection limit needs to be set such that it does not turn off the power for actual loads, but does for any faults.&lt;&#x2F;p&gt;
+&lt;p&gt;The circuit breakers in your house switchboard does the same thing, which is why sometimes the safety switch will trip when using an dodgy iron.
+Or if you have two many appliances running on a circuit at the same time it will exceed the breaker&amp;#39;s rating and trip.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;alex.guinman.id.au&#x2F;posts&#x2F;2024&#x2F;power-engineering&#x2F;breakers.jpg&quot; alt=&quot;Circuit breakers&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Another way to avoid turning off the power unnecessarily is something called an &amp;#39;auto-reclose&amp;#39;.
+This is when a fault is detected and the protection device gives it a few seconds to try and go away by itself.
+An example would be a lightning strike or tree branch falling on a line.
+The hope is that if you wait a few seconds and try to turn the power back on everything might have fixed itself.
+Lightning only lasts a split-second and in the case of the tree branch it would have caught fire and fallen away.
+That&amp;#39;s why sometimes in storms the lights will flicker off and on a few times, but hopefully the power stays on.
+If the fault is still detected after a few reclose attempts, it is probably something more serious (like a fallen line) and so it needs to be turned off permanently until someone can physically make the area safe and fix the problem.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;-1&quot;&gt;Power Quality&lt;&#x2F;h2&gt;
+&lt;p&gt;Another thing that can limit how much power can flow through the grid is power quality.&lt;&#x2F;p&gt;
+&lt;p&gt;To explain electricity, water pipes are often used as an analogy.
+For voltage, this is analogous to the water pressure.  Similar to how you do not want water pressure to be too strong or weak when having a shower, there is a sweet spot. In order to prevent damage to equipment it needs to be kept in a certain range - if the voltage gets too high or low it can &lt;a href=&quot;https:&#x2F;&#x2F;ro.uow.edu.au&#x2F;test2021&#x2F;4993&#x2F;&quot;&gt;cause damage to appliances&lt;&#x2F;a&gt;. In particular, high volts will make things run slightly hotter and therefore not last as long. If you look at the label on a phone charger for example, it will say what voltage range it can work with (probably 100-240 V). In Australia, the preferred voltage range that power should be supplied to your house is 225-244 V.&lt;&#x2F;p&gt;
+&lt;p&gt;Below is an example of the voltage at our house throughout the day and how it changes based on how much power we are using at the time.
+It also varies when we aren&amp;#39;t using any power, as your neighbours are all sharing the same network and so they can also impact it.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;alex.guinman.id.au&#x2F;posts&#x2F;2024&#x2F;power-engineering&#x2F;voltage.png&quot; alt=&quot;&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Generating power (exporting solar) pushes the voltage up, and consuming power brings the voltage down. Looking at my peak day example above, the voltage started at about 236 V. When the solar came on it pushed the voltage up 4 V to 240 V and then when the air con came on it dropped 8 V to 232 V (and the solar was still helping to push it up). The relationship between power and voltage can depend on where in the network the power is coming from - the transformer is right out the front of my house and the further from the transformer your house is the bigger the impact on the voltage, so it didn&amp;#39;t vary that much. So sometimes the hosting capacity will be limited not by a thermal rating but by the power being so high (or low) that it causes voltages to be outside the preferred range and starting to cause damage to appliances.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;-2&quot;&gt;Demand and Diversity&lt;&#x2F;h2&gt;
+&lt;p&gt;In my switchboard, the main safety switch has a rating of 63 A.
+But adding up how much some (not even all) of the appliances in our house can use, gives a total power of 111 A.&lt;&#x2F;p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Appliance&lt;&#x2F;th&gt;&lt;th&gt;Amperes&lt;&#x2F;th&gt;&lt;th&gt;kilo Watts&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;Air Con&lt;&#x2F;td&gt;&lt;td&gt;25&lt;&#x2F;td&gt;&lt;td&gt;5.8&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Oven&lt;&#x2F;td&gt;&lt;td&gt;22&lt;&#x2F;td&gt;&lt;td&gt;5.1&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Hot Water System&lt;&#x2F;td&gt;&lt;td&gt;15&lt;&#x2F;td&gt;&lt;td&gt;3.5&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Induction Cooktop (Main Plate)&lt;&#x2F;td&gt;&lt;td&gt;15&lt;&#x2F;td&gt;&lt;td&gt;3.5&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Induction Cooktop (2nd plate)&lt;&#x2F;td&gt;&lt;td&gt;8&lt;&#x2F;td&gt;&lt;td&gt;1.8&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Clothes Dryer&lt;&#x2F;td&gt;&lt;td&gt;10&lt;&#x2F;td&gt;&lt;td&gt;2.3&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Kettle&lt;&#x2F;td&gt;&lt;td&gt;9&lt;&#x2F;td&gt;&lt;td&gt;2.1&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Toaster&lt;&#x2F;td&gt;&lt;td&gt;4&lt;&#x2F;td&gt;&lt;td&gt;0.9&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;TV&lt;&#x2F;td&gt;&lt;td&gt;1&lt;&#x2F;td&gt;&lt;td&gt;0.2&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Computer&lt;&#x2F;td&gt;&lt;td&gt;1&lt;&#x2F;td&gt;&lt;td&gt;0.2&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Chest Freezer&lt;&#x2F;td&gt;&lt;td&gt;1&lt;&#x2F;td&gt;&lt;td&gt;0.2&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;em&gt;Total&lt;&#x2F;em&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;em&gt;111&lt;&#x2F;em&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;em&gt;25.6&lt;&#x2F;em&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;p&gt;This is possible because of something called diversity - where hopefully you are not running every single load in your house at the exact same time.&lt;&#x2F;p&gt;
+&lt;p&gt;In a &lt;a href=&quot;https:&#x2F;&#x2F;alex.guinman.id.au&#x2F;posts&#x2F;2023&#x2F;energy-usage&#x2F;&quot;&gt;another post&lt;&#x2F;a&gt;, I did some analysis of our home energy usage. If you look at my usage over the course of a year, you can see that for most of the year we use barely any power (&amp;lt;1 kW). In daytime we are mostly exporting power to the grid up to the 5 kW size of our rooftop solar. For a very small percentage of the year we are using 4-8 kW if the air conditioning is particularly working hard.&lt;&#x2F;p&gt;
+&lt;p&gt;The below chart is called a load duration curve and shows what percentage of the year was at a given power flow.
+The highest part of the curve is called the maximum demand.
+The lowest part of the curve is called is called the minimum demand (in my case it is negative since we are exporting solar).&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;alex.guinman.id.au&#x2F;posts&#x2F;2024&#x2F;power-engineering&#x2F;my_ldc.png&quot; alt=&quot;&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;A good example of these rare extremes was when we came home from holidays on a cold winter day at about lunch time.
+The hot water had been turned off while we were away and pretty much the only power being used was the fridge and chest freezer.
+We went from a power flow of -5 kW exporting from the solar to importing 8 kW from the grid when I turned on the hot water and started blasting the air conditioning to warm up the house (which means we were actually using about 13 kW as some was fed by the solar).
+If we had needed to cook some lunch on the induction cook top and oven at the same time (which is up to 8 kW in short bursts) we would probably have tripped off the power to the house.
+Or, if we had an electric car and wanted to charge it after our trip (another 3 - 8 kW depending on charging speed) that would have put it over the limit also.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;alex.guinman.id.au&#x2F;posts&#x2F;2024&#x2F;power-engineering&#x2F;peak-day.png&quot; alt=&quot;&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Luckily, it&amp;#39;s rare that everything would run at the same time like this though.
+Even on hot days when you might run the air-con all day, in reality it&amp;#39;s turning on and off throughout the day.
+Air-con has a thermostat and so will only turn on when the room temperature is above whatever it is set to.
+The rest of the time the air-con is turned off.
+It is the same for fridges, hot water etc they just turn on and off throughout the day as needed to get the temperature right.&lt;&#x2F;p&gt;
+&lt;p&gt;According to the &lt;a href=&quot;https:&#x2F;&#x2F;www.ergon.com.au&#x2F;__data&#x2F;assets&#x2F;pdf_file&#x2F;0016&#x2F;1020490&#x2F;Developers-Handbook-Developers-Design-and-Construct-Work-14340283.pdf&quot;&gt;Ergon Energy Developers Handbook&lt;&#x2F;a&gt; the expected After-Diversity Maximum Demand (ADMD) for Queensland households is 5 kVA.
+This means that whilst people might use more then that for very short periods, on average the most houses use at any one time is 5 kVA even on really hot days.
+Unfortunately, there is no such diversity for solar because generally if the sun is shining for you (or cloudy), it is for all your neighbours as well and always at the same time of the day.&lt;&#x2F;p&gt;
+&lt;p&gt;Looking at 10 peaky days for our house, you can see the time of the load peaks varies pretty wildly (but not so much for solar generation).
+&lt;img src=&quot;https:&#x2F;&#x2F;alex.guinman.id.au&#x2F;posts&#x2F;2024&#x2F;power-engineering&#x2F;10days.png&quot; alt=&quot;&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;For all of Queensland, the maximum demand usually occurs on really hot summer days when everyone is using their air conditioning at the same time.
+In colder places like Toowoomba it might be a winter morning peak with everyone running heating.
+The minimum demand is usually when all the rooftop solar is generating (no clouds) but nobody is using any power - generally Spring and Autumn long weekends (nobody is at work), when temperatures are pleasant (so no air con), but there is plenty of sun.&lt;&#x2F;p&gt;
+&lt;p&gt;Diversity means that you don&amp;#39;t see sudden spikes like you would for a single house as you get higher up in the grid.
+Looking at the state wide load duration curve for Queensland in the &lt;a href=&quot;https:&#x2F;&#x2F;www.powerlink.com.au&#x2F;sites&#x2F;default&#x2F;files&#x2F;2023-10&#x2F;TAPR%202023%20Chapter%203.pdf&quot;&gt;Powerlink TAPR&lt;&#x2F;a&gt;, the peaks are only for a small amount of the year.
+The minimum demand occurs much more often then maximum demand, since solar is less diverse, and is getting lower (and for longer) each year as more people install solar.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;-3&quot;&gt;Energy Transition&lt;&#x2F;h2&gt;
+&lt;p&gt;The Australian Energy Market Operator (AEMO) forecasts in their &lt;a href=&quot;https:&#x2F;&#x2F;aemo.com.au&#x2F;-&#x2F;media&#x2F;files&#x2F;major-publications&#x2F;isp&#x2F;2024&#x2F;2024-integrated-system-plan-isp.pdf?la=en&quot;&gt;Integrated System Plan&lt;&#x2F;a&gt; a large increase in rooftop solar, batteries and EV charging in the next few decades. The amount of solar has been &lt;a href=&quot;https:&#x2F;&#x2F;www.abc.net.au&#x2F;news&#x2F;2024-12-18&#x2F;survey-of-the-worlds-solar-shows-global-boom&#x2F;104006096&quot;&gt;doubling every 3 years&lt;&#x2F;a&gt;.
+&lt;a href=&quot;https:&#x2F;&#x2F;electricvehiclecouncil.com.au&#x2F;wp-content&#x2F;uploads&#x2F;2024&#x2F;03&#x2F;EVC-Australian-EV-Industry-Recap-2023.pdf&quot;&gt;Electic Vechile (EV) sales&lt;&#x2F;a&gt; are increasing at a similar rate, and an EV fast charger basically doubles the capacity a normal house uses (32 A or 7.3 kW), so is pretty significant.&lt;&#x2F;p&gt;
+&lt;p&gt;One solution to support this would be to upgrade the ratings of the grid to support this by doubling the amount of transformers and substations - but this would cost billions of dollars. A significantly cheaper option is to instead just make sure that car charging soaks up all the solar power, and does not happen at the same time as air conditioning. Like with the pandemic, we want to &amp;#39;flatten the curve&amp;#39;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;-4&quot;&gt;Device Control&lt;&#x2F;h2&gt;
+&lt;p&gt;Occasionally, power need to be switched off because there is not enough generation, like when &lt;a href=&quot;https:&#x2F;&#x2F;www.abc.net.au&#x2F;news&#x2F;2021-06-02&#x2F;qld-cs-energy-releases-photo-of-damaged-callide-power-station&#x2F;100186330&quot;&gt;a power station suddenly goes offline&lt;&#x2F;a&gt;. On the flip side, generation might need to be turned off if nobody is using any load to make use of it - &lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=8UmsfXWzvEA&quot;&gt;this video gives a good example&lt;&#x2F;a&gt;. In Australia, this is done by AEMO issuing something called a &lt;a href=&quot;https:&#x2F;&#x2F;aemo.com.au&#x2F;-&#x2F;media&#x2F;files&#x2F;learn&#x2F;fact-sheets&#x2F;lor-fact-sheet.pdf?la=en&quot;&gt;Lack of Reserve Notice (LOR)&lt;&#x2F;a&gt; or &lt;a href=&quot;https:&#x2F;&#x2F;aemo.com.au&#x2F;-&#x2F;media&#x2F;files&#x2F;learn&#x2F;fact-sheets&#x2F;2024&#x2F;fact-sheetminimum-system-load.pdf?la=en&quot;&gt;Minimum System Load (MSL)&lt;&#x2F;a&gt; Notice.&lt;&#x2F;p&gt;
+&lt;p&gt;The ability to switch circuits on and off on a schedule has been a think since the 50s using something called ripple control.
+If you put certain devices (like hot water or pool pumps) on an economy tariff, you get cheaper electricity rates in return for the network operator being able to turn them off for a few hours on days of peak usage.&lt;&#x2F;p&gt;
+&lt;p&gt;For hot water systems, nobody really notices if they are turned off for short periods as they are essentially a thermal battery and can store heat.
+In fact, they can be used like a normal battery to soak up solar in the day and then you can use the hot water for showers at night.
+All you really care about is that the water is hot when you want to use it.&lt;&#x2F;p&gt;
+&lt;p&gt;For most other appliances you do care that you can use it when you want to as they don&amp;#39;t act like a battery.
+It doesn&amp;#39;t make sense to put air conditioning on an economy tariff as hot days is exactly when you want to use it.
+There was an improvement to ripple control in 2007 in the form of the AS4755 Demand Response standard.
+It allowed other options other then just turning things off completely.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;DRM0: disconnect&lt;&#x2F;li&gt;
+&lt;li&gt;DRM1: compressor off&lt;&#x2F;li&gt;
+&lt;li&gt;DRM2: capped to operate at 50%&lt;&#x2F;li&gt;
+&lt;li&gt;DRM3: capped to operate at 75%&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;But most people &lt;a href=&quot;https:&#x2F;&#x2F;www.abc.net.au&#x2F;news&#x2F;2024-01-31&#x2F;energex-ergon-peaksmart-air-con-cuts-during-hot-weather&#x2F;103385474&quot;&gt;don&amp;#39;t really like someone having control&lt;&#x2F;a&gt; even though it&amp;#39;s better for everyone&amp;#39;s air con to go to 50% then the power to the street to trip off completely at times of maximum demand.
+A similar problem with solar occurs at times of minimum demand, which is referred to as &lt;a href=&quot;https:&#x2F;&#x2F;www.abc.net.au&#x2F;news&#x2F;2024-12-02&#x2F;aemo-demands-emergency-backstop-to-switch-off-solar&#x2F;104670332&quot;&gt;emergency backstop&lt;&#x2F;a&gt; and also not a very popular idea desite being needed to as an emergency mechanism to a system blackout.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;-5&quot;&gt;Dynamic Pricing&lt;&#x2F;h2&gt;
+&lt;p&gt;Why can&amp;#39;t this all be solved by or time-of-use tariffs or dynamic prices instead? These definitely can help with the problem but fall short of solving it completely for a couple of reasons.&lt;&#x2F;p&gt;
+&lt;p&gt;We are on a time-of-use tariff, and try to do things like pre-cooling the house to avoid needing to run the air-con during the peak period. But if the temperature gets hot enough - we will run the air-con no matter what the price is.
+Another way that pricing falls short is that it&amp;#39;s generally set a statewide level. There may be little pockets around the state that have a constraint and have an opposing requirement to the statewide one. An example might be that some sort of event is happening that results in a large amount of people visiting a small town (like Roma or Birdsville Races) and despite being a nice sunny day with cheap prices due to lots of solar, the local part of the grid does not have a capacity for everyone to fast charge their EVs simultaneously.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;-6&quot;&gt;Hosting Capacity&lt;&#x2F;h2&gt;
+&lt;p&gt;The distribution grid hosting capacity is defined as the amount of new generation or consumption that can be accommodated by the grid without adversely impacting the reliability or power quality for other customers or requiring grid upgrades or modifications.&lt;&#x2F;p&gt;
+&lt;p&gt;Anyone who connects to the electricity grid and receives a fixed connection is guaranteed their part of this available capacity forever in a first come, first served (whoever first calls dibs) system. Generally there is a basic connection offer that anyone can apply for that is free upfront (money comes out of power bills later) even if the network requires upgrades to support it. There is also a negotiated process for larger customers who want more then the basic offering where they might need to pay some of the upgrade cost upfront if upgrades are required to unlock more capacity.&lt;&#x2F;p&gt;
+&lt;p&gt;According to the &lt;a href=&quot;https:&#x2F;&#x2F;www.ergon.com.au&#x2F;__data&#x2F;assets&#x2F;pdf_file&#x2F;0018&#x2F;1009053&#x2F;Connection-Policy-2020-2025.pdf&quot;&gt;Ergon Connection Policy&lt;&#x2F;a&gt; the basic fixed offering in urban Queensland is currently 100 A (23 kVA) per phase for loads, and 22 A (5 kVA) per phase for generation (solar).
+So if you want more power then this and there is no capacity available, you are required to pay for some of the upgrade costs (which could be very expensive). The reason why the value for loads is higher then generation is due to loads being more diverse then solar as discussed earlier. There is an assumption that not everyone will use all their appliances at the same time, but they will all generate solar at the same time.&lt;&#x2F;p&gt;
+&lt;p&gt;In the case of solar, when there is no capacity left there might be an option to connect for free but not be allowed to export to the grid. This is so that people without solar aren&amp;#39;t forced to pay for the upgrade costs in their bills for those that do, but does still mean they might miss out if they want to add solar later. If for example, there was a 100 kW transformer on a street, and everyone can automatically apply for a 5 kW solar system, the first 20 people on the street to install solar are allowed to export indefinitely, but everyone after that is not allowed to export as there is no spare capacity left without installing a new transformer (which is expensive).&lt;&#x2F;p&gt;
+&lt;p&gt;The main issue with a fixed export hosting capacity number, is that is needs to be conservative and assume the worst-case conditions into the future. It only really applies on minimum demand days, but the rest of the year it may be possible for the grid to handle way more than that.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;-7&quot;&gt;Dynamic Operating Envelopes&lt;&#x2F;h2&gt;
+&lt;p&gt;If we dynamically calculate the hosting capacity every 5 minutes instead of using a single worst-case figure for the entire year, we unlock heaps of extra capacity for free for ~95% of the time. In theory, calculating this dynamic capacity is relatively easy, it&amp;#39;s the real-time rating (factoring in weather conditions) minus the real-time power usage (what power are people using right now). In practice, it&amp;#39;s usually not that easy - there isn&amp;#39;t real time data for weather and power usage at every point in the network so a bunch of complex calculations and assumptions need to be made to try and estimate it.&lt;&#x2F;p&gt;
+&lt;p&gt;Sending the grid limits is a big improvement over direct control over appliances as a customer. Instead of turning of having the network turn off a specific device - a Home Energy Management System (or HEMS) can make these decisions for you. On min demand days, if the grid wants you to stop exporting solar instead of it turning off and wasting generation, you could instead charge your EV or run the air con to pre-cool your house. On max demand days, if the grid wants you to stop importing energy you could power your air con from your battery instead. Or if you do need to turn something off you can make the choice about whether your air con or EV charging is more important at that moment.&lt;&#x2F;p&gt;
+&lt;p&gt;Dynamic Operating Envelopes (DOE) over the internet is one solution to this. Basically the HEMS receives an Import and Export Limit (in kW) every 5 minutes for that site. It works a little bit like a &lt;a href=&quot;https:&#x2F;&#x2F;www.tmr.qld.gov.au&#x2F;travel-and-transport&#x2F;road-and-traffic-info&#x2F;smart-motorways&#x2F;smart-motorways-technologies#Variable-Speed-Limit-Signs&quot;&gt;variable speed limit sign&lt;&#x2F;a&gt; on the motorway that might say it&amp;#39;s 100 km&#x2F;h normally but will drop down to 60 km&#x2F;h if there has been an accident or congestion.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Energy Usage</title>
+        <published>2023-07-01T00:00:00+00:00</published>
+        <updated>2023-07-01T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Alex Guinman
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://alex.guinman.id.au/posts/2023/energy-usage/"/>
+        <id>https://alex.guinman.id.au/posts/2023/energy-usage/</id>
+        
+        <content type="html" xml:base="https://alex.guinman.id.au/posts/2023/energy-usage/">&lt;p&gt;I did &lt;a href=&quot;&#x2F;posts&#x2F;2019&#x2F;energy-data&#x2F;&quot;&gt;a post a few years back&lt;&#x2F;a&gt; looking at our energy usage at our old house. We&#x27;ve been in the new place for 2 years now and with solar and electric hot water and cooking the charts are more interesting now.&lt;&#x2F;p&gt;
+&lt;p&gt;If you know a little bit of python I&#x27;ve &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;aguinane&#x2F;energy-report#energy-report&quot;&gt;published the script used to make these charts&lt;&#x2F;a&gt; if you want to run with your own data.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;alex.guinman.id.au&#x2F;posts&#x2F;2023&#x2F;energy-usage&#x2F;heatmap.png&quot; alt=&quot;&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;We got the hot water system put on a timer when we moved in and I originally set it to run from 08:00 - 15:00 with a top up at midnight, but after getting the first bill back quickly realised most of the hot water heating was happening at night time and not using the solar. So I got rid of the night-time timer and we have never ended up with cold water. I later changed it again to come on later (from 09:30) to make even better use of the free solar.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;alex.guinman.id.au&#x2F;posts&#x2F;2023&#x2F;energy-usage&#x2F;profile.png&quot; alt=&quot;&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;The other significant loads are:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Aircon heating on winter mornings&lt;&#x2F;li&gt;
+&lt;li&gt;Typical evening cooking etc. (can&amp;#39;t do much about that)&lt;&#x2F;li&gt;
+&lt;li&gt;A tiny bit off aircon cooling in the summer evening (but less then heating - so cancels out for time-of-use tariffs)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;A new time of use tariff came out today (12C) that is designed for people with battery systems, but looks pretty good for us in Toowoomba even without a battery given most of our load is outside of that evening period.
+According to the &lt;a href=&quot;https:&#x2F;&#x2F;www.energymadeeasy.gov.au&quot;&gt;Energy Made Easy&lt;&#x2F;a&gt; website it&amp;#39;s the best option too.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;alex.guinman.id.au&#x2F;posts&#x2F;2023&#x2F;energy-usage&#x2F;energy-made-easy.png&quot; alt=&quot;&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Air Con Automation</title>
+        <published>2020-05-02T00:00:00+00:00</published>
+        <updated>2020-05-02T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Alex Guinman
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://alex.guinman.id.au/posts/2020/air-con-automation/"/>
+        <id>https://alex.guinman.id.au/posts/2020/air-con-automation/</id>
+        
+        <content type="html" xml:base="https://alex.guinman.id.au/posts/2020/air-con-automation/">&lt;p&gt;When I first started playing with &lt;a href=&quot;https:&#x2F;&#x2F;www.home-assistant.io&quot;&gt;Home Assistant&lt;&#x2F;a&gt; the first thing I thought to automate was our air-conditioner. When we bought the air con for our living room it cost way more for the &quot;smart&quot; ones that you could control with your phone and we didn&#x27;t think we would use it anyway, so we just got a &lt;a href=&quot;https:&#x2F;&#x2F;www.kelvinator.com.au&#x2F;air-conditioning&#x2F;split-system&#x2F;ksv70hrd&quot;&gt;dumb one&lt;&#x2F;a&gt;. But since it can take up to five minutes or so before the heater works, it&#x27;s definitely good to have it automatically turn on on cold mornings, or turn it on from your phone in bed.&lt;&#x2F;p&gt;
+&lt;p&gt;Luckily, since you turn it on with a remote, all you have to do is buy a universal remote with WiFi. I got the Broadlink RM2 Pro from eBay for about $40. The &lt;a href=&quot;https:&#x2F;&#x2F;secure.logitech.com&#x2F;en-au&#x2F;product&#x2F;harmony-hub&quot;&gt;Logitech&lt;&#x2F;a&gt; ones are probably much better, but cost way more.
+There are also products like &lt;a href=&quot;https:&#x2F;&#x2F;sensibo.com&quot;&gt;Sensibo&lt;&#x2F;a&gt; that are designed just for air cons but are also way more expensive.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;alex.guinman.id.au&#x2F;posts&#x2F;2020&#x2F;air-con-automation&#x2F;aircon.jpg&quot; title=&quot;Wifi%20Remote%20on%20bookshelf&quot; alt=&quot;&amp;quot;Air Con&amp;quot;&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;The app isn&amp;#39;t very good and setting it up with home assistant is a little bit painful. You have to work out the code the remote sends to turn it on, which for our air con was:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#2b303b;color:#c0c5ce;&quot;&gt;&lt;code&gt;&lt;span&gt;JgAkAQABJ5MWEhUTFBMVNxQUFBMVExUSFDgUFBMUFDgUExUTFRIVExQTFRMVExQTFBQUNxUTFBQTFBUTFBMVExU2FRMUOBQTFBQUNxQUFQACkBQTFBQUExQUFBQTFBQUFBMVExUSFRMVEhUTFRMUExQUFBMVExUSFRMVEhUTFRMUExQUFBMVExQTFDgVNxQTFDgUAAUhAAEmlBQTFBQUExU3FRIVExUTFBMUOBQTFRMVNxQTFBQUExUTFRIUFBQTFRMUFBQ3FRMUExUTFBMUFBQUFDcVNxQ4FBMVExQ3FBQUAAKRFBMVExQTFRMVEhQUFBQUExQUFBMVExQTFBQUExUTFRMUExQUFBMUFBUSFRMVEhUTFRMUExQUFBMUOBQ4FBMVNxUADQUAAAAA
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The Broadlink Remote actually has a temperature sensor in it as well. So I set up an automation so that it will automatically turn on the air-con in the morning if the temperature is below 10°C.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;alex.guinman.id.au&#x2F;posts&#x2F;2020&#x2F;air-con-automation&#x2F;hass-aircon.png&quot; title=&quot;Home%20Assistant%20Screenshot&quot; alt=&quot;&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;It&amp;#39;s been running nicely for a couple of years, but broke when I changed the WiFi a few months ago. It&amp;#39;s been pretty cold the last 2 days so went through the painful process of re-pairing to the WiFi and it&amp;#39;s all happy and working again now. Next job will be automatically heating Lyra&amp;#39;s room.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Energy Consumption Data</title>
+        <published>2019-10-26T00:00:00+00:00</published>
+        <updated>2019-10-26T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Alex Guinman
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://alex.guinman.id.au/posts/2019/energy-data/"/>
+        <id>https://alex.guinman.id.au/posts/2019/energy-data/</id>
+        
+        <content type="html" xml:base="https://alex.guinman.id.au/posts/2019/energy-data/">&lt;p&gt;When we moved into our house it had an old accumulation meter (read every 3 months) that was probably put in when the house was built (as it was apparently installed by the &lt;em&gt;Toowoomba Electric Light &amp;amp; Power Company&lt;&#x2F;em&gt;).&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;alex.guinman.id.au&#x2F;posts&#x2F;2019&#x2F;energy-data&#x2F;old_meter.jpg&quot; alt=&quot;&amp;quot;energy meter&amp;quot;&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;We got a &amp;#39;smart&amp;#39; meter installed a few years ago. Unfortunately there is no way to get access to the data from it directly, so you can&amp;#39;t really use it to do home automation or anything useful in real-time.&lt;&#x2F;p&gt;
+&lt;p&gt;You can request your interval data from &lt;a href=&quot;https:&#x2F;&#x2F;www.ergon.com.au&#x2F;network&#x2F;connections&#x2F;metering&#x2F;accessing-your-metering-data&quot;&gt;Ergon&lt;&#x2F;a&gt; or &lt;a href=&quot;https:&#x2F;&#x2F;www.energex.com.au&#x2F;home&#x2F;our-services&#x2F;meters&#x2F;accessing-your-metering-data&quot;&gt;Energex&lt;&#x2F;a&gt; up to 4 times a year. This allows you to do some analysis and charting of your energy usage at least. Here is a &lt;a href=&quot;https:&#x2F;&#x2F;alex.guinman.id.au&#x2F;posts&#x2F;2019&#x2F;energy-data&#x2F;xxxxxxxxxx_20170701_20180630_20180906143230_ERGONETP_DETAILED.csv&quot;&gt;link to my data&lt;&#x2F;a&gt; for the 2017-18 financial year with my NMI redacted.&lt;&#x2F;p&gt;
+&lt;p&gt;When you look at daily consumption it&amp;#39;s suprisingly easy to tell when we were away on holidays. We went to Rocky four times in the first half of 2018 and it&amp;#39;s really easy to make these longer dips in energy usage out. There are a few shorter dips that represent weekend trips to Brisbane or the coast. You can also pick out really hot or cold days which have large spikes from the air-con.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;alex.guinman.id.au&#x2F;posts&#x2F;2019&#x2F;energy-data&#x2F;energy-daily.jpg&quot; alt=&quot;&amp;quot;daily usage&amp;quot;&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;It&amp;#39;s even more apparent when you zoom in on the energy usage of a day when were away.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;alex.guinman.id.au&#x2F;posts&#x2F;2019&#x2F;energy-data&#x2F;energy-not-home.jpg&quot; alt=&quot;&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;It&amp;#39;s basically no usage except for the refrigerator compressor kicking in every now and then. Compare this to a cold workday where you can see a big spike when the heater was running before work and then afternoon usage when we got home from work.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;alex.guinman.id.au&#x2F;posts&#x2F;2019&#x2F;energy-data&#x2F;energy-cold-day.jpg&quot; alt=&quot;&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;It wasn&amp;#39;t a particularly hot year in Toowoomba, so our average profile had a clear winter morning peak and then generally consistent afternoon peak throughout the year.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;alex.guinman.id.au&#x2F;posts&#x2F;2019&#x2F;energy-data&#x2F;energy-seasonal.jpg&quot; alt=&quot;&amp;quot;seasonal usage&amp;quot;&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Since Rachael was working a rotating roster there wasn&amp;#39;t a huge difference between weekends&#x2F;weekdays either.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;alex.guinman.id.au&#x2F;posts&#x2F;2019&#x2F;energy-data&#x2F;energy-workday.jpg&quot; alt=&quot;&amp;quot;workday usage&amp;quot;&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;It was also interesting to compare what we would have paid on different tariffs over the year. Since we have gas hot water we don&amp;#39;t actually use that much energy and so discounts on the kwh rate didn&amp;#39;t make a huge difference. The price was mostly driven by the daily charges that you pay no matter what. I was suprised that Tariff 12 (Time of Use) was slightly cheaper, but saving $13 a year is probably not worth having to worry about what time of day we use energy.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;alex.guinman.id.au&#x2F;posts&#x2F;2019&#x2F;energy-data&#x2F;energy-bills.jpg&quot; alt=&quot;&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;The SEQ retailers also seemed to be way more expensive, although that doesn&amp;#39;t factor in the discounts and sign-up bonuses they offer.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>
