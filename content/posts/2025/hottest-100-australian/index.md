@@ -9,7 +9,7 @@ categories = [ "Misc",]
 tags = [ "Hottest 100",]
 
 [extra]
-image = "posts/2025/hottest.png"
+image = "posts/2025/hottest-100-australian/hottest.png"
 
 +++
 
