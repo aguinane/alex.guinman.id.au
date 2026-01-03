@@ -32,7 +32,7 @@ So I am going to try and find copies of my lists from past years, although this 
 - Temper Trap, The - Fader
 - Washington - How To Tame Lions
 
-## 2009 - All Time
+## 2009 All Time
 
 This is the 10 songs that I voted for in the Hottest 100 of all time.
 It's a fairly modern list, and not necessarily the greatest songs of time, but the one's that I felt deserved my vote at the time.
@@ -71,6 +71,7 @@ Also, here are just some of the MANY songs that didn't quite make the 10:
 - Don't You Think It's Time - Bob Evans
 - The Zephyr Song - Red Hot Chili Peppers
 
+
 ## 2007
 
 - Powderfinger - Black Tears
@@ -84,27 +85,29 @@ Also, here are just some of the MANY songs that didn't quite make the 10:
 - Josh Pyke - Vibrations In Air
 - Missy Higgins - Warm Whispers
 
+
 ## 2006
 
+
 - 'Til The End - The Living End
-	Have to vote for Living End of course. They have had a song in the countdown since 1997. They were awesome live! Chose this song over Long Live The Weekend and Wake Up, also good songs.
+  - Have to vote for Living End of course. They have had a song in the countdown since 1997. They were awesome live! Chose this song over Long Live The Weekend and Wake Up, also good songs.
 - This Bed - Kisschasy
-	There albulm actually came out like 2 years ago now I think, but anyway. It was in the list of songs you can vote for so why not. The shake was also on the list, but this is better.
+  - There albulm actually came out like 2 years ago now I think, but anyway. It was in the list of songs you can vote for so why not. The shake was also on the list, but this is better.
 - Call Me Anytime - The Cops
-	Only just came out, so haven't given it a chance to get annoying yet, but so far I still love it.
+  - Only just came out, so haven't given it a chance to get annoying yet, but so far I still love it.
 - Don't You Think It's Time - Bob Evans
-	This song sounds really nice, even if the Harmonica riff is a rip-off of a Billy Joel song. ALMOST voted for Nowhere Without You instead, another great song.
+  - This song sounds really nice, even if the Harmonica riff is a rip-off of a Billy Joel song. ALMOST voted for Nowhere Without You instead, another great song.
 - Changing Emily - Special Patrol
-	I really have no idea why I like this song. I just do.
+  - I really have no idea why I like this song. I just do.
 - Distance - Ellington
-	This vote is kinda a waste, cause they have no chance of getting in the list. But I love this song. It's Rohan's cousins band (he told me to download). There other EP songs are good too, but not as good as distance.
+  - This vote is kinda a waste, cause they have no chance of getting in the list. But I love this song. It's Rohan's cousins band (he told me to download). There other EP songs are good too, but not as good as distance.
 - Starlight - Muse
 - Black Fingernails, Red Wine - Eskimo Joe
-	Hmm, not there best album. But the chorus still makes this a good catchy song.
+  - Hmm, not there best album. But the chorus still makes this a good catchy song.
 - Here It Goes Again - OK Go
-	Perhaps not the greatest song in the world, but the video clip more than compensates for any doubt in whether it should get a vote.
+  - Perhaps not the greatest song in the world, but the video clip more than compensates for any doubt in whether it should get a vote.
 - When You Were Young - The Killers
-	Despite the fact that it was on Sarah's So Fresh CD, this is still a good song.
+  - Despite the fact that it was on Sarah's So Fresh CD, this is still a good song.
 
 Honourable Mentions.......
 
