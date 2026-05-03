@@ -8,9 +8,9 @@ Running PBs:
 
 | Distance | PB                  |
 | -------- | ------------------- |
-| 5 km     | [20:59][parkrun]    |
-| 10 km    | [49:32][tm2025]     |
-| 21.1 km  | [1:53:30][tm2025]   |
+| 5 km     | [20:41][parkrun]    |
+| 10 km    | [46:36][tm2026]     |
+| 21.1 km  | [01:44:01][tm2026]   |
 | 42.2 km  | [04:17:35][gcm2025] |
 
 Cycling PBs:
@@ -35,6 +35,8 @@ Timed Races:
 - Toowoomba 1/2 Marathon 2025 [1:53:30][tm2025]
 - Gold Coast Marathon 2025 [04:17:35][gcm2025]
 - Mooloolaba Standard Triathlon 2026 [02:48:35][mootri2026]
+- Toowooomba 1/2 Marathon 2026 [01:44:01][tm2026]
+
 
 [parkrun]: https://www.parkrun.com.au/parkrunner/1694205/all/
 [b2b2018]: https://www.multisportaustralia.com.au/races/15122/events/2/results/individuals/9457
@@ -42,3 +44,4 @@ Timed Races:
 [tm2025]: https://results.sportseventservices.com.au/myresults.aspx?CId=16287&RId=6440&EId=2&RNo=1107
 [gcm2025]: https://www.multisportaustralia.com.au/races/gold-coast-marathon-2025/events/1/results/individuals/13026
 [mootri2026]: https://www.sportsplits.com/races/mooloolaba-triathlon-festival-2026/events/5/results/individuals/3306/
+[tm2026]: https://results.sportseventservices.com.au/myresults.aspx?CId=16287&RId=6535&EId=2&AId=972967
