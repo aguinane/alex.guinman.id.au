@@ -27,7 +27,6 @@ taxonomies = [
 ]
 
 [markdown]
-highlight_code = true
 lazy_async_image = true
 
 [extra]
