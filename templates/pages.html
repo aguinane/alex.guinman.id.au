@@ -3,11 +3,11 @@
 {% block content %}
 
 <ul class="blog-pages">
-  {%- for page in section.pages %}
+  {% for page in section.pages %}
   <li>
     {{ macros::page_summary(page=page) }}
   </li>
-  {%- endfor -%}
+  {% endfor %}
 </ul>
 
 

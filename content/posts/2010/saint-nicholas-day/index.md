@@ -15,4 +15,4 @@ image = "posts/2010/saint-nicholas-day/p1050907.jpg"
 
 ![Christmas Bread](p1050907.jpg)
 
-So apparently today is [Saint Nicholas Day](http://en.wikipedia.org/wiki/Saint_Nicholas#Germany), and so at work we all got given an edible version of him.
+So apparently today is [Saint Nicholas Day](https://en.wikipedia.org/wiki/Saint_Nicholas_Day), and so at work we all got given an edible version of him.

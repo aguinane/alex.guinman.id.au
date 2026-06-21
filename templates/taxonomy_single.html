@@ -2,10 +2,10 @@
 
 {% block content %}
 <section>
-    {%- for page in term.pages -%}
+    {% for page in term.pages %}
     <aside>
         {{ macros::post_summary_image(page=page) }}
     </aside>
-    {%- endfor -%}
+    {% endfor %}
 </section>
 {% endblock content %}

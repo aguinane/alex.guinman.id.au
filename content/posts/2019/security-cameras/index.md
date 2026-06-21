@@ -39,7 +39,7 @@ I didn't want to be locked in to that though - you can also use something like Z
 I originally was running the free NVR software on my NAS, but it was a bit underspecced and made the NAS run slow and filled up the HDD. When the power went out the NAS wants you to check the disk before it starts it up again which also helpful for a security camera when you are away. So I ended up buying their [hardware NVR](https://www.umart.com.au/Ubiquiti-UniFi-NVR-2TB-Network-Video-Recorder_44608G.html) to use instead.
 
 **Uptype: post
-date:** Annoyingly, they discontinued the NVR and replaced it [with this](https://www.ubnt.com.au/unifi-cloud-key-gen2-plus) a few months after I bought it.
+date:** Annoyingly, they discontinued the NVR and replaced it with the Cloud Key Gen2 Plus a few months after I bought it.
 
 Another requirement was that I preferrably wanted to use Power over Ethernet (PoE) which means you don't have to have a power point it just has an ethernet cable that powers it and does data transfer. But it meant I had to buy a new [network switch that supports PoE](https://www.umart.com.au/Ubiquiti-UniFi-8-Port-60W-with-4-Ports-POE-OEM_39604G.html) as well and they are also expensive. You can just buy a standalone [PoE injector](https://www.umart.com.au/Ubiquiti-POE-Injector--24VDC--12W_38532G.html) for each camera ($10 each) but that makes things a bit messy as you would have a bunch of them and need a switch anyway if you don't have enough ethernet ports.
 

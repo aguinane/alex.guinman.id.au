@@ -10,7 +10,6 @@ tags = [ "Hottest 100",]
 
 [extra]
 image = "posts/2025/hottest-100-australian/hottest.png"
-
 +++
 
 ![](hottest.png)
