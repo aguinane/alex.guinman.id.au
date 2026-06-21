@@ -9,7 +9,7 @@ categories = [ "Misc",]
 tags = [ "Toowoomba",]
 
 [extra]
-image = "posts/2026/parkrun-stats-2025/times_2025.png"
+image = "posts/2026/parkrun-stats/times_2025.png"
 
 +++
 
